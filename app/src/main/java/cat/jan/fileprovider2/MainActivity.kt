@@ -62,8 +62,7 @@ class MainActivity : AppCompatActivity() {
         //El nom del fitxer serà "IMG_" seguit del temps actual en milisegons acabat en _. Ho indiquem al prefix:
         //L'extensió l'indicarem al "sufix" i serà -jpg
 
-        file = File.createTempFile("IMG_${System.currentTimeMillis()}_",".jpg", dir)
-        file = File.createTempFile("Jan_ " + Calendar.getInstance().time + "_",".jpg", dir)
+        file = File.createTempFile("Jan_ " + Calendar.getInstance().time + "_",".png", dir)
     }
 
     private val startForResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult())
