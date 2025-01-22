@@ -38,7 +38,6 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnTakeFoto.setOnClickListener()
         {
-            demanarPermisosGrabarAudio()
             //startForResult.launch(Intent(MediaStore.ACTION_IMAGE_CAPTURE),)
             //Fent servir File Provider ara haurem de gestionar millor el retorn de l'Intent de la Càmera
             val intent = Intent(MediaStore.ACTION_VIDEO_CAPTURE).also{
@@ -109,17 +108,7 @@ class MainActivity : AppCompatActivity() {
                 Manifest.permission.CAMERA
             ) != PackageManager.PERMISSION_GRANTED
         ) {
-            requestPermissions(arrayOf(Manifest.permission.CAMERA), 101)
-        }
-    }
-
-    fun demanarPermisosGrabarAudio() {
-        if (ContextCompat.checkSelfPermission(
-                this,
-                Manifest.permission.RECORD_AUDIO
-            ) != PackageManager.PERMISSION_GRANTED
-        ) {
-            requestPermissions(arrayOf(Manifest.permission.RECORD_AUDIO), 101)
+            requestPermissions(arrayOf(Manifest.permission.CAMERA, Manifest.permission.RECORD_AUDIO), 101)
         }
     }
 }
